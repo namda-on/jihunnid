@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://de0itx3rsuv1j"]
+
+[ext_resource type="Script" uid="uid://cet7bqqacmycf" path="res://scripts/texture_button.gd" id="1_p8bbk"]
+[ext_resource type="Texture2D" uid="uid://bgv3m5k35cf8e" path="res://resources/KakaoTalk_Photo_2025-05-21-22-53-57 001.png" id="2_1q8ae"]
+
+[node name="display1" type="Node2D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = -818.0
+offset_top = -738.0
+offset_right = 822.0
+offset_bottom = 770.0
+script = ExtResource("1_p8bbk")
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureButton"]
+position = Vector2(1353, 1279)
+scale = Vector2(0.597268, 0.597268)
+texture = ExtResource("2_1q8ae")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
