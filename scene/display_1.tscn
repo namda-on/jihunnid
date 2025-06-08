@@ -1,13 +1,13 @@
 [gd_scene load_steps=17 format=3 uid="uid://de0itx3rsuv1j"]
 
-[ext_resource type="Script" uid="uid://cbp8qr2ay83in" path="res://scripts/main.gd" id="1_1q8ae"]
+[ext_resource type="Script" path="res://scripts/display1.gd" id="1_1q8ae"]
 [ext_resource type="Script" uid="uid://cet7bqqacmycf" path="res://scripts/texture_button.gd" id="1_p8bbk"]
 [ext_resource type="Texture2D" uid="uid://ca1wuophwrkid" path="res://resources/Background.png" id="3_lrxvb"]
-[ext_resource type="Texture2D" uid="uid://brppjuccb4wvh" path="res://resources/Outline - Big.png" id="4_3l2ge"]
-[ext_resource type="Script" uid="uid://csaem4ryxqq5a" path="res://scripts/image.gd" id="4_ygyl1"]
-[ext_resource type="Texture2D" uid="uid://b4j77n4yif6e6" path="res://resources/Outline - Small.png" id="5_kfbfr"]
-[ext_resource type="Texture2D" uid="uid://dkyullmkkcxtl" path="res://resources/Layer - START.png" id="6_3l2ge"]
+[ext_resource type="Script" path="res://scripts/image.gd" id="4_ygyl1"]
+[ext_resource type="Texture2D" uid="uid://bv2o47vjq6bd5" path="res://resources/Outline - Big@3x.png" id="5_ygyl1"]
+[ext_resource type="Texture2D" uid="uid://b8ng78vhtq4dr" path="res://resources/Outline - Small@3x.png" id="6_mqc1m"]
 [ext_resource type="Texture2D" uid="uid://7hpgj7u086d4" path="res://resources/Layer - LOADING.png" id="7_kfbfr"]
+[ext_resource type="Texture2D" uid="uid://b1lb6b3g00laq" path="res://resources/Layer - START@3x.png" id="8_87x68"]
 [ext_resource type="Texture2D" uid="uid://bwm7n88ayusg6" path="res://resources/outline-red.png" id="8_i2wlo"]
 [ext_resource type="Texture2D" uid="uid://c4h3da8m268jt" path="res://resources/Layer - INFINITY.png" id="9_4v7va"]
 
@@ -354,10 +354,12 @@ texture = ExtResource("3_lrxvb")
 script = ExtResource("4_ygyl1")
 
 [node name="outline-lg" type="Sprite2D" parent="TextureButton/img"]
-texture = ExtResource("4_3l2ge")
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("5_ygyl1")
 
 [node name="outline-sm" type="Sprite2D" parent="TextureButton/img"]
-texture = ExtResource("5_kfbfr")
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("6_mqc1m")
 
 [node name="loading" type="Sprite2D" parent="TextureButton/img"]
 visible = false
@@ -365,7 +367,8 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_kfbfr")
 
 [node name="start" type="Sprite2D" parent="TextureButton/img"]
-texture = ExtResource("6_3l2ge")
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("8_87x68")
 
 [node name="outline-red" type="Sprite2D" parent="TextureButton/img"]
 visible = false
