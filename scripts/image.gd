@@ -20,7 +20,17 @@ func show_result() -> void:
 	outline_red.visible = false
 	infinite.visible = true
 	outline_lg.modulate = Color(1,1,1,1)
-	anim_player.play("showResult")	
+	anim_player.play("showResult")
+
+func show_loading() -> void:
+	mode = "loading"
+	anim_player.play("clickAnim")
+	await anim_player.animation_finished
+	anim_player.play("rotate")
+	await get_tree().create_timer(10).timeout
+	anim_player.stop()
+	self.show_result()
+	
 	
 func reset() -> void:
 	anim_player.play("RESET")

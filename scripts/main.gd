@@ -7,7 +7,7 @@ var is_dragging = false
 const DRAG_THRESHOLD_X = 200  # 드래그 거리 임계값 (X축 기준)
 var scene_changed = false
 
-func _read():
+func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _input(event):

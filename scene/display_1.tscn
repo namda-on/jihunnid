@@ -523,4 +523,3 @@ texture = ExtResource("11_mqc1m")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
-[connection signal="animation_finished" from="TextureButton/AnimationPlayer" to="TextureButton" method="_on_animation_player_animation_finished"]
