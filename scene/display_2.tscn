@@ -5,6 +5,6 @@
 [node name="display2" type="Node2D"]
 
 [node name="KakaoTalkPhoto2025-05-21-22-53-57002" type="Sprite2D" parent="."]
-position = Vector2(517, 540)
+position = Vector2(511, 523)
 scale = Vector2(0.588866, 0.588866)
 texture = ExtResource("1_4bch4")
