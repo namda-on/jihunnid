@@ -1,17 +1,41 @@
-[gd_scene load_steps=8 format=3 uid="uid://dib6rywf7agoh"]
+[gd_scene load_steps=8 format=3 uid="uid://c6581rpoe54l7"]
 
-[ext_resource type="Script" uid="uid://dl5milmokt46t" path="res://display_2.gd" id="1_a6sas"]
 [ext_resource type="Texture2D" uid="uid://ca1wuophwrkid" path="res://resources/Background.png" id="2_yc27d"]
 [ext_resource type="Texture2D" uid="uid://brppjuccb4wvh" path="res://resources/Outline - Big.png" id="3_r57jo"]
 [ext_resource type="Texture2D" uid="uid://b4j77n4yif6e6" path="res://resources/Outline - Small.png" id="4_288o8"]
 [ext_resource type="Texture2D" uid="uid://c4h3da8m268jt" path="res://resources/Layer - INFINITY.png" id="5_yc27d"]
 [ext_resource type="Texture2D" uid="uid://7hpgj7u086d4" path="res://resources/Layer - LOADING.png" id="6_m1qty"]
 
+[sub_resource type="GDScript" id="GDScript_g8et1"]
+script/source = "extends Node2D
+
+var drag_start_position = Vector2.ZERO
+var is_dragging = false
+const DRAG_THRESHOLD_X = 200  # 드래그 거리 임계값 (X축 기준)
+var scene_changed = false
+
+func _input(event):
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			is_dragging = true
+			scene_changed = false
+			drag_start_position = event.position
+		else:
+			is_dragging = false
+
+	elif event is InputEventScreenDrag and is_dragging and not scene_changed:
+		var delta_x = event.position.x - drag_start_position.x
+
+		if abs(delta_x) > DRAG_THRESHOLD_X:
+			scene_changed = true
+			get_tree().change_scene_to_file(\"res://scene/display_1.tscn\")
+"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_4bch4"]
 radius = 540.0
 
 [node name="display2" type="Node2D"]
-script = ExtResource("1_a6sas")
+script = SubResource("GDScript_g8et1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
