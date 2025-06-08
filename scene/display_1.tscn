@@ -1,14 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://de0itx3rsuv1j"]
+[gd_scene load_steps=22 format=3 uid="uid://de0itx3rsuv1j"]
 
+[ext_resource type="Script" uid="uid://cbp8qr2ay83in" path="res://scripts/main.gd" id="1_1q8ae"]
 [ext_resource type="Script" uid="uid://cet7bqqacmycf" path="res://scripts/texture_button.gd" id="1_p8bbk"]
 [ext_resource type="Texture2D" uid="uid://ca1wuophwrkid" path="res://resources/Background.png" id="3_lrxvb"]
 [ext_resource type="Script" uid="uid://csaem4ryxqq5a" path="res://scripts/image.gd" id="4_ygyl1"]
-[ext_resource type="Texture2D" uid="uid://bv2o47vjq6bd5" path="res://resources/Outline - Big@3x.png" id="5_ygyl1"]
+[ext_resource type="Texture2D" uid="uid://cxpuf3ws5iv8n" path="res://resources/outline-new.png" id="5_mqc1m"]
 [ext_resource type="Texture2D" uid="uid://b8ng78vhtq4dr" path="res://resources/Outline - Small@3x.png" id="6_mqc1m"]
 [ext_resource type="Texture2D" uid="uid://7hpgj7u086d4" path="res://resources/Layer - LOADING.png" id="7_kfbfr"]
-[ext_resource type="Texture2D" uid="uid://b1lb6b3g00laq" path="res://resources/Layer - START@3x.png" id="8_87x68"]
-[ext_resource type="Texture2D" uid="uid://bwm7n88ayusg6" path="res://resources/outline-red.png" id="8_i2wlo"]
+[ext_resource type="Texture2D" uid="uid://02d38uefy00q" path="res://resources/start-nw.png" id="8_87x68"]
 [ext_resource type="Texture2D" uid="uid://c4h3da8m268jt" path="res://resources/Layer - INFINITY.png" id="9_4v7va"]
+[ext_resource type="Texture2D" uid="uid://d22u7121kbvg" path="res://resources/outline-red-new.png" id="9_mqc1m"]
+[ext_resource type="Texture2D" uid="uid://dt65xpm87qs5d" path="res://resources/press.png" id="11_mqc1m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1q8ae"]
 radius = 540.0
@@ -159,10 +161,46 @@ tracks/11/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("TextureButton/img/reveal:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("TextureButton/img/reveal:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("TextureButton/img/infinite:skew")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.439823]
+}
 
 [sub_resource type="Animation" id="Animation_kfbfr"]
 resource_name = "clickAnim"
-length = 0.4
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -182,7 +220,7 @@ tracks/1/path = NodePath("TextureButton/img/loading:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2, 0.4),
+"times": PackedFloat32Array(0.2, 0.6),
 "transitions": PackedFloat32Array(0.329877, 1),
 "update": 0,
 "values": [Vector2(1, 1e-05), Vector2(1, 1)]
@@ -190,79 +228,119 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TextureButton/img/start:modulate")
+tracks/2/path = NodePath("TextureButton/img/loading:skew")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("TextureButton/img/loading:skew")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.2, 0.399139),
+"times": PackedFloat32Array(0.2, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 0.0]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("TextureButton/img/loading:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.2, 0.4),
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureButton/img/loading:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("TextureButton/img/outline-red:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(-0.0333333, 0, 0.4),
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureButton/img/outline-red:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(-0.0333333, 0, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("TextureButton/img/outline-red:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureButton/img/outline-red:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.00310114),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureButton/img/outline-lg:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("TextureButton/img/outline-lg:modulate")
+tracks/7/path = NodePath("TextureButton/img/reveal:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.366667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_mqc1m"]
+resource_name = "reveal"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton/img/reveal:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton/img/start:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureButton/img/reveal:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.00576286),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="Animation" id="Animation_4v7va"]
 resource_name = "rotate"
-length = 0.6
+length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -271,7 +349,7 @@ tracks/0/path = NodePath("TextureButton/img/outline-red:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.6),
+"times": PackedFloat32Array(0, 0.5, 0.8),
 "transitions": PackedFloat32Array(1, 1, 0.6),
 "update": 0,
 "values": [0.0, 3.14159, 6.28319]
@@ -279,7 +357,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ygyl1"]
 resource_name = "showResult"
-length = 0.2
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -287,8 +365,8 @@ tracks/0/path = NodePath("TextureButton/img/infinite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 0.353553),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.203063, 0.0544094),
 "update": 0,
 "values": [Vector2(1, 1e-05), Vector2(1, 1)]
 }
@@ -299,7 +377,7 @@ tracks/1/path = NodePath("TextureButton/img/infinite:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 0.3),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -316,16 +394,66 @@ tracks/2/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureButton/img/infinite:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.133972, 1),
+"update": 0,
+"values": [0.698132, 0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4v7va"]
 _data = {
 &"RESET": SubResource("Animation_i2wlo"),
 &"clickAnim": SubResource("Animation_kfbfr"),
+&"reveal": SubResource("Animation_mqc1m"),
 &"rotate": SubResource("Animation_4v7va"),
 &"showResult": SubResource("Animation_ygyl1")
 }
 
+[sub_resource type="Animation" id="Animation_87x68"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("img/loading:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.50178),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1oc7p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("img/loading:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lfrk2"]
+_data = {
+&"RESET": SubResource("Animation_1oc7p"),
+&"fade_in": SubResource("Animation_87x68")
+}
+
 [node name="display1" type="Node2D"]
+script = ExtResource("1_1q8ae")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -346,6 +474,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_4v7va")
 }
 
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="TextureButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_lfrk2")
+}
+
 [node name="img" type="Sprite2D" parent="TextureButton"]
 position = Vector2(818, 738)
 texture = ExtResource("3_lrxvb")
@@ -353,7 +486,7 @@ script = ExtResource("4_ygyl1")
 
 [node name="outline-lg" type="Sprite2D" parent="TextureButton/img"]
 scale = Vector2(0.35, 0.35)
-texture = ExtResource("5_ygyl1")
+texture = ExtResource("5_mqc1m")
 
 [node name="outline-sm" type="Sprite2D" parent="TextureButton/img"]
 scale = Vector2(0.35, 0.35)
@@ -361,22 +494,31 @@ texture = ExtResource("6_mqc1m")
 
 [node name="loading" type="Sprite2D" parent="TextureButton/img"]
 visible = false
+modulate = Color(1, 1, 1, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_kfbfr")
 
 [node name="start" type="Sprite2D" parent="TextureButton/img"]
+position = Vector2(0, 17)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("8_87x68")
 
 [node name="outline-red" type="Sprite2D" parent="TextureButton/img"]
 visible = false
-scale = Vector2(1.05, 1.05)
-texture = ExtResource("8_i2wlo")
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("9_mqc1m")
 
 [node name="infinite" type="Sprite2D" parent="TextureButton/img"]
 visible = false
+position = Vector2(2, 1)
 scale = Vector2(1, 1e-05)
+skew = 0.439823
 texture = ExtResource("9_4v7va")
+
+[node name="reveal" type="Sprite2D" parent="TextureButton/img"]
+visible = false
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("11_mqc1m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
