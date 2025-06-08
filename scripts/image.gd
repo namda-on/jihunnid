@@ -10,7 +10,6 @@ extends Node
 var mode = 'ready'
 
 func show_reveal() -> void:
-	print("show reveal")
 	mode = 'reveal'
 	anim_player.play("reveal")
 
@@ -29,16 +28,16 @@ func show_loading() -> void:
 	anim_player.play("rotate")
 	await get_tree().create_timer(10).timeout
 	anim_player.stop()
-	self.show_result()
+	if mode == "loading":
+		self.show_result()
 	
 	
 func reset() -> void:
+	mode="ready"
 	anim_player.play("RESET")
 	start_text.visible = true
-	start_text.modulate = Color(1,1,1,1)
 	loading_text.visible = false
 	outline_red.visible = false
 	infinite.visible = false
 	get_parent().disabled = false
-	mode="ready"
 	

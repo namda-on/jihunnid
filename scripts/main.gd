@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var texture_button = $"TextureButton"
 @onready var img = $"TextureButton/img"
 
 var drag_start_position = Vector2.ZERO
@@ -18,6 +19,10 @@ func _input(event):
 			drag_start_position = event.position
 		else:
 			is_dragging = false
+			var delta_x = event.position.x - drag_start_position.x
+			if abs(delta_x) < DRAG_THRESHOLD_X:
+				if texture_button.get_global_rect().has_point(event.position):
+					_on_texture_button_pressed()
 
 	elif event is InputEventScreenDrag and is_dragging and not scene_changed:
 		var delta_x = event.position.x - drag_start_position.x
@@ -25,3 +30,6 @@ func _input(event):
 		if abs(delta_x) > DRAG_THRESHOLD_X:
 			scene_changed = true
 			img.reset()
+
+func _on_texture_button_pressed():
+	texture_button._on_pressed()

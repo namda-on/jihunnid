@@ -452,7 +452,7 @@ _data = {
 &"fade_in": SubResource("Animation_87x68")
 }
 
-[node name="display1" type="Node2D"]
+[node name="main" type="Node2D"]
 script = ExtResource("1_1q8ae")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -466,6 +466,7 @@ offset_left = -818.0
 offset_top = -738.0
 offset_right = 822.0
 offset_bottom = 770.0
+mouse_filter = 2
 script = ExtResource("1_p8bbk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureButton"]

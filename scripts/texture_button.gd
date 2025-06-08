@@ -11,8 +11,6 @@ func _on_pressed() -> void:
 	if anim_player.is_playing():
 		return
 	if img.mode == "ready":
-		print("reveal")
 		img.show_reveal()
 	elif img.mode == "reveal":
-		print("clickAnim")
 		img.show_loading()
