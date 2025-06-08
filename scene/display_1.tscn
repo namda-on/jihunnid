@@ -1,16 +1,289 @@
-[gd_scene load_steps=4 format=3 uid="uid://de0itx3rsuv1j"]
+[gd_scene load_steps=16 format=3 uid="uid://de0itx3rsuv1j"]
 
+[ext_resource type="Script" uid="uid://cbp8qr2ay83in" path="res://scripts/display1.gd" id="1_1q8ae"]
 [ext_resource type="Script" uid="uid://cet7bqqacmycf" path="res://scripts/texture_button.gd" id="1_p8bbk"]
-[ext_resource type="Texture2D" uid="uid://bgv3m5k35cf8e" path="res://resources/KakaoTalk_Photo_2025-05-21-22-53-57 001.png" id="2_1q8ae"]
+[ext_resource type="Texture2D" uid="uid://ca1wuophwrkid" path="res://resources/Background.png" id="3_lrxvb"]
+[ext_resource type="Texture2D" uid="uid://brppjuccb4wvh" path="res://resources/Outline - Big.png" id="4_3l2ge"]
+[ext_resource type="Texture2D" uid="uid://b4j77n4yif6e6" path="res://resources/Outline - Small.png" id="5_kfbfr"]
+[ext_resource type="Texture2D" uid="uid://dkyullmkkcxtl" path="res://resources/Layer - START.png" id="6_3l2ge"]
+[ext_resource type="Texture2D" uid="uid://7hpgj7u086d4" path="res://resources/Layer - LOADING.png" id="7_kfbfr"]
+[ext_resource type="Texture2D" uid="uid://bwm7n88ayusg6" path="res://resources/outline-red.png" id="8_i2wlo"]
+[ext_resource type="Texture2D" uid="uid://c4h3da8m268jt" path="res://resources/Layer - INFINITY.png" id="9_4v7va"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8bbk"]
-size = Vector2(1080, 1080)
+[sub_resource type="CircleShape2D" id="CircleShape2D_1q8ae"]
+radius = 540.0
+
+[sub_resource type="Animation" id="Animation_kfbfr"]
+resource_name = "clickAnim"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton/img/loading:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.199469),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton/img/loading:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(0.329877, 1),
+"update": 0,
+"values": [Vector2(1, 1e-05), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureButton/img/start:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureButton/img/loading:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.399139),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureButton/img/loading:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureButton/img/outline-red:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(-0.0333333, 0, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureButton/img/outline-red:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.00310114),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_i2wlo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton/img/loading:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton/img/loading:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 0.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureButton/img/start:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureButton/img/loading:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureButton/img/loading:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureButton/img/outline-red:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureButton/img/outline-red:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureButton/img/outline-red:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextureButton/img/infinite:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1e-05)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TextureButton/img/infinite:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4v7va"]
+resource_name = "rotate"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton/img/outline-red:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 0.6),
+"update": 0,
+"values": [0.0, 3.14159, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_ygyl1"]
+resource_name = "showResult"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton/img/infinite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 0.353553),
+"update": 0,
+"values": [Vector2(1, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton/img/infinite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 0.3),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4v7va"]
+_data = {
+&"RESET": SubResource("Animation_i2wlo"),
+&"clickAnim": SubResource("Animation_kfbfr"),
+&"rotate": SubResource("Animation_4v7va"),
+&"showResult": SubResource("Animation_ygyl1")
+}
 
 [node name="display1" type="Node2D"]
+script = ExtResource("1_1q8ae")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 z_index = 3
-shape = SubResource("RectangleShape2D_p8bbk")
+shape = SubResource("CircleShape2D_1q8ae")
 debug_color = Color(0.366459, 0.515036, 0.890221, 0.42)
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -20,11 +293,39 @@ offset_right = 822.0
 offset_bottom = 770.0
 script = ExtResource("1_p8bbk")
 
-[node name="Sprite2D" type="Sprite2D" parent="TextureButton"]
-position = Vector2(823, 731)
-scale = Vector2(0.689314, 0.689314)
-texture = ExtResource("2_1q8ae")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureButton"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_4v7va")
+}
+
+[node name="img" type="Sprite2D" parent="TextureButton"]
+position = Vector2(818, 738)
+texture = ExtResource("3_lrxvb")
+
+[node name="outline-lg" type="Sprite2D" parent="TextureButton/img"]
+texture = ExtResource("4_3l2ge")
+
+[node name="outline-sm" type="Sprite2D" parent="TextureButton/img"]
+texture = ExtResource("5_kfbfr")
+
+[node name="loading" type="Sprite2D" parent="TextureButton/img"]
+visible = false
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_kfbfr")
+
+[node name="start" type="Sprite2D" parent="TextureButton/img"]
+texture = ExtResource("6_3l2ge")
+
+[node name="outline-red" type="Sprite2D" parent="TextureButton/img"]
+visible = false
+texture = ExtResource("8_i2wlo")
+
+[node name="infinite" type="Sprite2D" parent="TextureButton/img"]
+scale = Vector2(1, 1e-05)
+texture = ExtResource("9_4v7va")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
+[connection signal="animation_finished" from="TextureButton/AnimationPlayer" to="TextureButton" method="_on_animation_player_animation_finished"]

@@ -1,10 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://dib6rywf7agoh"]
+[gd_scene load_steps=8 format=3 uid="uid://dib6rywf7agoh"]
 
-[ext_resource type="Texture2D" uid="uid://daveqvq1ptp1t" path="res://resources/KakaoTalk_Photo_2025-05-21-22-53-57 002.png" id="1_4bch4"]
+[ext_resource type="Script" uid="uid://dl5milmokt46t" path="res://display_2.gd" id="1_a6sas"]
+[ext_resource type="Texture2D" uid="uid://ca1wuophwrkid" path="res://resources/Background.png" id="2_yc27d"]
+[ext_resource type="Texture2D" uid="uid://brppjuccb4wvh" path="res://resources/Outline - Big.png" id="3_r57jo"]
+[ext_resource type="Texture2D" uid="uid://b4j77n4yif6e6" path="res://resources/Outline - Small.png" id="4_288o8"]
+[ext_resource type="Texture2D" uid="uid://c4h3da8m268jt" path="res://resources/Layer - INFINITY.png" id="5_yc27d"]
+[ext_resource type="Texture2D" uid="uid://7hpgj7u086d4" path="res://resources/Layer - LOADING.png" id="6_m1qty"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4bch4"]
+radius = 540.0
 
 [node name="display2" type="Node2D"]
+script = ExtResource("1_a6sas")
 
-[node name="KakaoTalkPhoto2025-05-21-22-53-57002" type="Sprite2D" parent="."]
-position = Vector2(593, 547)
-scale = Vector2(0.588866, 0.588866)
-texture = ExtResource("1_4bch4")
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+z_index = 3
+shape = SubResource("CircleShape2D_4bch4")
+debug_color = Color(0.366459, 0.515036, 0.890221, 0.42)
+
+[node name="img" type="Sprite2D" parent="."]
+texture = ExtResource("2_yc27d")
+
+[node name="outline-lg" type="Sprite2D" parent="img"]
+texture = ExtResource("3_r57jo")
+
+[node name="outline-sm" type="Sprite2D" parent="img"]
+texture = ExtResource("4_288o8")
+
+[node name="start" type="Sprite2D" parent="img"]
+texture = ExtResource("5_yc27d")
+
+[node name="loading" type="Sprite2D" parent="img"]
+visible = false
+texture = ExtResource("6_m1qty")
