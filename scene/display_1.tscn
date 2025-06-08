@@ -21,8 +21,8 @@ offset_bottom = 770.0
 script = ExtResource("1_p8bbk")
 
 [node name="Sprite2D" type="Sprite2D" parent="TextureButton"]
-position = Vector2(812, 736)
-scale = Vector2(0.597268, 0.597268)
+position = Vector2(823, 731)
+scale = Vector2(0.689314, 0.689314)
 texture = ExtResource("2_1q8ae")
 
 [node name="Camera2D" type="Camera2D" parent="."]
