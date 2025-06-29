@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://de0itx3rsuv1j"]
+[gd_scene load_steps=28 format=3 uid="uid://de0itx3rsuv1j"]
 
 [ext_resource type="Script" uid="uid://cbp8qr2ay83in" path="res://scripts/main.gd" id="1_1q8ae"]
 [ext_resource type="Script" uid="uid://cet7bqqacmycf" path="res://scripts/texture_button.gd" id="1_p8bbk"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dcf51eaghicf5" path="res://resources/outline-yello.png" id="14_5tycm"]
 [ext_resource type="Texture2D" uid="uid://bhg4fkermqnh8" path="res://resources/match100.png" id="15_5tycm"]
 [ext_resource type="Texture2D" uid="uid://dpc5qj7xaxvo5" path="res://resources/jihunnid.png" id="15_lq08a"]
+[ext_resource type="Script" uid="uid://cxidlohakv4gj" path="res://scene/person.gd" id="16_tm77g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1q8ae"]
 radius = 540.0
@@ -397,7 +398,7 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("TextureButton/img/Jihunnid:scale")
+tracks/31/path = NodePath("TextureButton/img/person:scale")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
@@ -409,7 +410,7 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("TextureButton/img/Jihunnid:modulate")
+tracks/32/path = NodePath("TextureButton/img/person:modulate")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -421,7 +422,7 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("TextureButton/img/Jihunnid:visible")
+tracks/33/path = NodePath("TextureButton/img/person:visible")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
@@ -597,7 +598,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TextureButton/img/Jihunnid:scale")
+tracks/4/path = NodePath("TextureButton/img/person:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -609,7 +610,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("TextureButton/img/Jihunnid:modulate")
+tracks/5/path = NodePath("TextureButton/img/person:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -621,7 +622,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("TextureButton/img/Jihunnid:visible")
+tracks/6/path = NodePath("TextureButton/img/person:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -826,7 +827,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("TextureButton/img/Jihunnid:visible")
+tracks/9/path = NodePath("TextureButton/img/person:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1155,11 +1156,12 @@ visible = false
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("14_5tycm")
 
-[node name="Jihunnid" type="Sprite2D" parent="TextureButton/img"]
+[node name="person" type="Sprite2D" parent="TextureButton/img"]
 visible = false
 position = Vector2(-1.19209e-07, -168)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("15_lq08a")
+script = ExtResource("16_tm77g")
 
 [node name="match" type="Sprite2D" parent="TextureButton/img"]
 visible = false
