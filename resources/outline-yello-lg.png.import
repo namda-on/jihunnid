@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daveqvq1ptp1t"
-path="res://.godot/imported/KakaoTalk_Photo_2025-05-21-22-53-57 002.png-b7ed269fb9d5ddf1484ff68fe234fde6.ctex"
+uid="uid://cmsmhqtt32wpy"
+path="res://.godot/imported/outline-yello-lg.png-49a59522307b0316cf23be19a5ec3199.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/KakaoTalk_Photo_2025-05-21-22-53-57 002.png"
-dest_files=["res://.godot/imported/KakaoTalk_Photo_2025-05-21-22-53-57 002.png-b7ed269fb9d5ddf1484ff68fe234fde6.ctex"]
+source_file="res://resources/outline-yello-lg.png"
+dest_files=["res://.godot/imported/outline-yello-lg.png-49a59522307b0316cf23be19a5ec3199.ctex"]
 
 [params]
 

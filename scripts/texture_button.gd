@@ -1,7 +1,6 @@
 extends TextureButton
 
 @onready var anim_player = $AnimationPlayer
-@onready var anim_player2 = $AnimationPlayer2
 @onready var loading_text = $img/loading
 @onready var outline_red = $"img/outline-red"
 @onready var infinite = $img/infinite
