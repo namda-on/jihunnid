@@ -40,7 +40,7 @@ func show_loading() -> void:
 	if current_id != _loading_id: return
 	
 	anim_player.play("rotate")
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(7).timeout
 	if current_id != _loading_id: return
 	
 	anim_player.stop()
@@ -50,7 +50,7 @@ func show_loading() -> void:
 func show_match() -> void:
 	anim_player.play("match")
 	await anim_player.animation_finished
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(5).timeout
 	
 	self.show_result()
 	
